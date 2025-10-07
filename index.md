@@ -1,22 +1,71 @@
-title: La Mia Pagina GitHub
----
+# 🧠 Classifica dei Modelli Vision
 
-# Benvenuto sulla mia pagina
+Questa pagina mostra una classifica aggiornata dei modelli di visione artificiale basata sul punteggio **AUROC** (Area Under ROC Curve).  
+I dati sono presentati in formato tabellare, con uno stile migliorato per una migliore leggibilità.
 
-Questa è una pagina GitHub Pages generata con il tema **Cayman**.  
-Sotto trovi una tabella di esempio con 5 colonne e 10 righe.
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5em;
+    font-size: 16px;
+  }
 
-## Tabella di esempio
+  th, td {
+    border: 1px solid #e0e0e0;
+    padding: 12px;
+    text-align: left;
+  }
 
-| Colonna 1 | Colonna 2 | Colonna 3 | Colonna 4 | Colonna 5 |
-|-----------|-----------|-----------|-----------|-----------|
-| Riga 1 C1 | Riga 1 C2 | Riga 1 C3 | Riga 1 C4 | Riga 1 C5 |
-| Riga 2 C1 | Riga 2 C2 | Riga 2 C3 | Riga 2 C4 | Riga 2 C5 |
-| Riga 3 C1 | Riga 3 C2 | Riga 3 C3 | Riga 3 C4 | Riga 3 C5 |
-| Riga 4 C1 | Riga 4 C2 | Riga 4 C3 | Riga 4 C4 | Riga 4 C5 |
-| Riga 5 C1 | Riga 5 C2 | Riga 5 C3 | Riga 5 C4 | Riga 5 C5 |
-| Riga 6 C1 | Riga 6 C2 | Riga 6 C3 | Riga 6 C4 | Riga 6 C5 |
-| Riga 7 C1 | Riga 7 C2 | Riga 7 C3 | Riga 7 C4 | Riga 7 C5 |
-| Riga 8 C1 | Riga 8 C2 | Riga 8 C3 | Riga 8 C4 | Riga 8 C5 |
-| Riga 9 C1 | Riga 9 C2 | Riga 9 C3 | Riga 9 C4 | Riga 9 C5 |
-| Riga 10 C1| Riga 10 C2| Riga 10 C3| Riga 10 C4| Riga 10 C5 |
+  th {
+    background-color: #f0f8ff;
+    color: #333;
+  }
+
+  tr:nth-child(even) {
+    background-color: #fafafa;
+  }
+
+  tr:hover {
+    background-color: #f1f1f1;
+  }
+
+  caption {
+    caption-side: top;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 0.5em;
+  }
+</style>
+
+<table>
+  <caption>📊 Classifica AUROC - Modelli Vision</caption>
+  <thead>
+    <tr>
+      <th>Posizione</th>
+      <th>Nome Modello</th>
+      <th>AUROC</th>
+      <th>Organizzazione</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>ViT-L/14 DINOv2</td>
+      <td>94.24</td>
+      <td>Meta AI</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>ViT-L/14 CLIP</td>
+      <td>92.04</td>
+      <td>OpenAI</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>ResNet-50 CLIP</td>
+      <td>81.77</td>
+      <td>OpenAI</td>
+    </tr>
+  </tbody>
+</table>
