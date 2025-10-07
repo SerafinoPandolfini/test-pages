@@ -3,6 +3,8 @@
 Questa pagina mostra una classifica aggiornata dei modelli di visione artificiale basata sul punteggio **AUROC** (Area Under ROC Curve).  
 Puoi cliccare sulle intestazioni della tabella per ordinarla dinamicamente.
 
+[Pagina2](./v2.html)
+
 <style>
   table {
     width: 100%;
