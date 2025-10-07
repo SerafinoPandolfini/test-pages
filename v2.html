@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Classifica Modelli Vision</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    h1 {
+      color: #0366d6;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5em;
+      font-size: 16px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    th, td {
+      border: 1px solid #e0e0e0;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th.sortable {
+      cursor: pointer;
+      background-color: #f0f8ff;
+      color: #0366d6;
+    }
+
+    th.sorted-asc::after {
+      content: " ▲";
+    }
+
+    th.sorted-desc::after {
+      content: " ▼";
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tr:hover {
+      background-color: #eef6ff;
+    }
+
+    caption {
+      caption-side: top;
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 0.5em;
+    }
+
+    .note {
+      background-color: #e0f7fa;
+      border-left: 5px solid #00796b;
+      padding: 1em;
+      margin-top: 1em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧠 Classifica dei Modelli Vision</h1>
+
+  <p>
+    Questa pagina mostra una classifica aggiornata dei modelli di visione artificiale basata sul punteggio <strong>AUROC</strong> (Area Under ROC Curve).
+    Clicca sulle intestazioni della tabella per ordinarla dinamicamente.
+  </p>
+
+  <div class="note">
+    <strong>Nota:</strong> I dati sono forniti a scopo illustrativo. L'AUROC misura la capacità di classificazione del modello.
+  </div>
+
+  <table id="modelTable">
+    <caption>📊 Classifica AUROC - Modelli Vision</caption>
+    <thead>
+      <tr>
+        <th class="sortable">Posizione</th>
+        <th class="sortable">Nome Modello</th>
+        <th class="sortable">AUROC</th>
+        <th class="sortable">Organizzazione</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>ViT-L/14 DINOv2</td>
+        <td>94.24</td>
+        <td>Meta AI</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>ViT-L/14 CLIP</td>
+        <td>92.04</td>
+        <td>OpenAI</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>ResNet-50 CLIP</td>
+        <td>81.77</td>
+        <td>OpenAI</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const headers = document.querySelectorAll("th.sortable");
+      headers.forEach((header, columnIndex) => {
+        header.addEventListener("click", () => {
+          const table = header.closest("table");
+          const tbody = table.querySelector("tbody");
+          const rows = Array.from(tbody.querySelectorAll("tr"));
+          const isNumeric = columnIndex === 0 || columnIndex === 2;
+
+          // Rimuove indicatori precedenti
+          headers.forEach(h => h.classList.remove("sorted-asc", "sorted-desc"));
+
+          const currentSort = header.classList.contains("sorted-asc") ? "asc" :
+                              header.classList.contains("sorted-desc") ? "desc" : null;
+          const newSort = currentSort === "asc" ? "desc" : "asc";
+          header.classList.add(`sorted-${newSort}`);
+
+          rows.sort((a, b) => {
+            let cellA = a.children[columnIndex].innerText.trim();
+            let cellB = b.children[columnIndex].innerText.trim();
+
+            if (isNumeric) {
+              return newSort === "asc"
+                ? parseFloat(cellA) - parseFloat(cellB)
+                : parseFloat(cellB) - parseFloat(cellA);
+            } else {
+              return newSort === "asc"
+                ? cellA.localeCompare(cellB)
+                : cellB.localeCompare(cellA);
+            }
+          });
+
+          rows.forEach(row => tbody.appendChild(row));
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
