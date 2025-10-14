@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Leaderboard Deep Learning - Classificazione Binaria</title>
+  <title>AI-GenBench: A New Ongoing Benchmark for AI-Generated Image Detection</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
@@ -23,107 +23,88 @@
       font-family: 'Google Sans', sans-serif;
     }
 
-    .publication-links .button {
-      margin: 0.25em;
-    }
-
-    .table-container {
-      background: white;
-      border-radius: 8px;
-      padding: 0.75rem;
-      box-shadow: 0 4px 14px rgba(20,20,20,0.06);
-    }
-
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      font-size: 0.95rem;
-    }
-
-    th, td {
-      padding: 12px 14px;
-      border-bottom: 1px solid #e9eef6;
-      vertical-align: middle;
-    }
-
-    th {
-      /* tenue sfumatura di blu */
-      background: linear-gradient(180deg, #eaf4ff 0%, #dfeefc 100%);
+    thead th {
+      background: linear-gradient(180deg, #e9f3ff 0%, #dbe9fb 100%);
       color: #083b66;
       cursor: pointer;
-      border-top-left-radius: 6px;
-      border-top-right-radius: 6px;
-      text-align: left;
       font-weight: 600;
+      white-space: nowrap; 
       user-select: none;
-    }
-
-    th .sort-indicator {
-      margin-left: 8px;
-      font-size: 0.85rem;
-      opacity: 0.75;
+      text-align: left;
     }
 
     th:hover {
-      filter: brightness(0.98);
+      background-color: #cfe1fa;
+    }
+
+    td, th {
+      padding: 10px 14px;
+      border-bottom: 1px solid #e9eef6;
     }
 
     tr:nth-child(even) td {
       background-color: #fbfdff;
     }
 
-    a {
-      color: #007acc;
+    .sort-indicator {
+      display: inline-block;
+      margin-left: 6px;
+      font-size: 0.8rem;
+      color: #4a4a4a;
     }
 
-    pre {
-      background-color: #f0f0f0;
-      padding: 15px;
-      border-radius: 6px;
-      overflow-x: auto;
+    .table-container {
+      background: white;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
     }
 
-    /* piccoli miglioramenti responsive */
-    @media (max-width: 900px) {
-      .table-container {
-        padding: 0.5rem;
-      }
-      th, td {
-        padding: 10px 8px;
-      }
+    .button.is-dark.is-rounded {
+      background-color: #083b66;
+      border: none;
+    }
+
+    .button.is-dark.is-rounded:hover {
+      background-color: #0a4a80;
+    }
+
+    .section-group {
+    text-align: center !important;
+    vertical-align: middle;
+    font-weight: 600;
     }
   </style>
 </head>
 
 <body>
 
-<!-- Hero Section -->
 <section class="hero">
   <div class="hero-body">
-    <div class="container is-max-desktop has-text-centered">
-      <h1 class="title is-1 publication-title">Leaderboard dei Modelli di Deep Learning</h1>
-      <h2 class="title is-3 publication-title">Classificazione Binaria</h2>
+    <div class="container has-text-centered">
+      <h1 class="title is-1 publication-title">AI-GenBench:</h1>
+      <h2 class="title is-3 publication-title"> A New Ongoing Benchmark for AI-Generated Image Detection</h2>
 
-      <div class="is-size-5">
-        <span class="author-block">
-          <a href="#" style="color:#008AD7;">Mario Rossi</a>,
-        </span>
-        <span class="author-block">
-          <a href="#" style="color:#008AD7;">Laura Bianchi</a>,
-        </span>
-        <span class="author-block">
-          <a href="#" style="color:#008AD7;">AI Lab Team</a>
-        </span>
-      </div>
+      <p class="is-size-5">
+        Lorenzo Pellegrini<sup>1</sup>, Davide Cozzolino<sup>2</sup>, Serafino Pandolfini<sup>1</sup>, Davide Maltoni<sup>1</sup>,
+        <br>
+        Matteo Ferrara<sup>1</sup>, Luisa Verdoliva<sup>2</sup>, Marco Prati<sup>3</sup>, Marco Ramilli<sup>3</sup>
+        <br>
+        <br>
+        <a href="#">1 Dipartimento di Informatica - Scienza e Ingegneria (DISI), Universita di Bologna, Cesena, Italy</a>
+        <br>
+        <a href="#">2 Dipartimento di Ingegneria Elettrica e delle Tecnologie dell’Informazione (DIETI), Universita degli Studi di Napoli Federico II, Naples, Italy</a>
+        <br>
+        <a href="#">3 IdentifAI, Italy</a>
+      </p>
 
       <br>
-      <div class="publication-links">
-        <a href="https://github.com/example-repo" target="_blank" class="button is-dark is-rounded is-small">
+      <div class="buttons is-centered">
+        <a href="https://github.com/MI-BioLab/deepfake-benchmark" target="_blank" class="button is-dark is-rounded is-small">
           <span class="icon"><i class="fab fa-github"></i></span>
           <span>GitHub</span>
         </a>
-
-        <a href="https://arxiv.org/abs/0000.00000" target="_blank" class="button is-dark is-rounded is-small">
+        <a href="https://arxiv.org/abs/2504.20865" target="_blank" class="button is-dark is-rounded is-small">
           <span class="icon"><i class="ai ai-arxiv"></i></span>
           <span>Paper</span>
         </a>
@@ -140,9 +121,25 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Questo lavoro presenta una comparativa di modelli di deep learning per la classificazione binaria in un contesto biomedico. 
-            Sono stati valutati diversi approcci basati su reti neurali convoluzionali e transformer, analizzando le prestazioni su dataset bilanciati e sbilanciati.
-            I risultati evidenziano l'importanza del tuning dei parametri e della scelta delle architetture nella generalizzazione del modello.
+            The rapid advancement of generative AI has revolutionized image creation, enabling high-quality synthesis from text
+            prompts while raising critical challenges for media authenticity.
+            We present AI-GenBench, a novel benchmark designed to address
+            the urgent need for robust detection of AI-generated images
+            in real-world scenarios. Unlike existing solutions that evaluate
+            models on static datasets, AI-GenBench introduces a temporal
+            evaluation framework where detection methods are incrementally
+            trained on synthetic images, historically ordered by their generative models, to test their ability to generalize to new generative
+            models, such as the transition from GANs to diffusion models.
+            Our benchmark focuses on high-quality, diverse visual content
+            and overcomes key limitations of current approaches, including arbitrary dataset splits, unfair comparisons, and excessive
+            computational demands. AI-GenBench provides a comprehensive
+            dataset, a standardized evaluation protocol, and accessible tools
+            for both researchers and non-experts (e.g., journalists, factcheckers), ensuring reproducibility while maintaining practical
+            training requirements. By establishing clear evaluation rules and
+            controlled augmentation strategies, AI-GenBench enables meaningful comparison of detection methods and scalable solutions.
+            Code and data are publicly available to ensure reproducibility
+            and to support the development of robust forensic detectors to
+            keep pace with the rise of new synthetic generators.
           </p>
         </div>
       </div>
@@ -151,21 +148,171 @@
     <div class="columns is-centered">
       <div class="column has-text-centered">
         <figure class="image is-4by2" style="display:inline-block; width:80%;">
-          <img src="https://via.placeholder.com/800x400.png?text=Immagine+Illustrativa" alt="Immagine illustrativa">
+          <img src="ai_gen_bench_teaser.jpg" alt="Immagine illustrativa">
         </figure>
       </div>
     </div>
   </div>
 </section>
-
-<!-- Leaderboard Table -->
 <section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Leaderboard dei Modelli</h2>
+  <div class="container">
+    <h2 class="title is-3 has-text-centered">Leaderboard</h2>
     <div class="table-container">
       <table id="leaderboard" class="table is-fullwidth is-hoverable">
         <thead>
+          <!-- Riga superiore: intestazioni raggruppate -->
           <tr>
-            <!-- aggiungo data-type come hint (opzionale) ma il codice è robusto comunque -->
-            <th data-type="string" onclick="sortTable(0)">Nome modello <span class="sort-indicator"></span></th>
-            <th data-type="string" onclick="s
+            <th rowspan="2" data-index="0">Model Name <span class="sort-indicator"></span></th>
+            <th rowspan="2" data-index="1">Author / Team <span class="sort-indicator"></span></th>
+            <th rowspan="2" data-index="2">Submission Date <span class="sort-indicator"></span></th>
+            <th rowspan="2" data-index="3"># Parameters <span class="sort-indicator"></span></th>
+            <th colspan="2" class="section-group">Past Period</th>
+            <th colspan="2" class="section-group">Next Period</th>
+            <th colspan="2" class="section-group">Whole Period</th>
+            <th rowspan="2" data-index="10">Paper / Model <span class="sort-indicator"></span></th>
+          </tr>
+          <!-- Riga inferiore: metriche -->
+          <tr>
+            <th data-index="4">AUROC <span class="sort-indicator"></span></th>
+            <th data-index="5">Accuracy <span class="sort-indicator"></span></th>
+            <th data-index="6">AUROC <span class="sort-indicator"></span></th>
+            <th data-index="7">Accuracy <span class="sort-indicator"></span></th>
+            <th data-index="8">AUROC <span class="sort-indicator"></span></th>
+            <th data-index="9">Accuracy <span class="sort-indicator"></span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>BinaryNet v1</td>
+            <td>AI Lab</td>
+            <td>2025-03-12</td>
+            <td>12M</td>
+            <td>1.000</td><td>0.905</td>
+            <td>0.933</td><td>0.899</td>
+            <td>0.928</td><td>0.894</td>
+            <td><a href="#">Paper</a></td>
+          </tr>
+          <tr>
+            <td>ResNet50 FineTuned</td>
+            <td>DeepVision Team</td>
+            <td>2025-04-20</td>
+            <td>23.5M</td>
+            <td>0.956</td><td>1.000</td>
+            <td>0.951</td><td>0.911</td>
+            <td>0.948</td><td>0.907</td>
+            <td><a href="#">Model Page</a></td>
+          </tr>
+          <tr>
+            <td>Transformer-Binary</td>
+            <td>ML Group</td>
+            <td>2025-06-05</td>
+            <td>45M</td>
+            <td>0.971</td><td>0.932</td>
+            <td>1.000</td><td>0.928</td>
+            <td>0.965</td><td>0.925</td>
+            <td><a href="#">Paper</a></td>
+          </tr>
+          <tr>
+            <td>SmallCNN</td>
+            <td>Student Team</td>
+            <td>2025-02-01</td>
+            <td>1.2M</td>
+            <td>0.880</td><td>0.845</td>
+            <td>1.000</td><td>0.839</td>
+            <td>0.864</td><td>0.832</td>
+            <td><a href="#">Repo</a></td>
+          </tr>
+          <tr>
+            <td>LargeTransformerX</td>
+            <td>Research Group</td>
+            <td>2025-07-10</td>
+            <td>120M</td>
+            <td>0.982</td><td>0.951</td>
+            <td>0.978</td><td>0.948</td>
+            <td>1.000</td><td>0.946</td>
+            <td><a href="#">Paper</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+@misc{pellegrini2025aigenbenchnewongoingbenchmark,
+      title={AI-GenBench: A New Ongoing Benchmark for AI-Generated Image Detection}, 
+      author={Lorenzo Pellegrini and Davide Cozzolino and Serafino Pandolfini and Davide Maltoni and Matteo Ferrara and Luisa Verdoliva and Marco Prati and Marco Ramilli},
+      year={2025},
+      eprint={2504.20865},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2504.20865}, 
+}
+    </code></pre>
+  </div>
+</section>
+
+<script>
+function parseDate(str) {
+  if (!str) return NaN;
+  str = str.trim();
+  if (/^\d{4}-\d{2}-\d{2}$/.test(str)) return new Date(str).getTime();
+  if (/^\d{2}[\/\-]\d{2}[\/\-]\d{4}$/.test(str)) {
+    const p = str.split(/[\/\-]/);
+    return new Date(parseInt(p[2]), parseInt(p[1]) - 1, parseInt(p[0])).getTime();
+  }
+  return NaN;
+}
+
+function parseNumber(str) {
+  const s = str.replace(/\s/g, '').toUpperCase();
+  if (s.endsWith('M')) return parseFloat(s) * 1e6;
+  if (s.endsWith('K')) return parseFloat(s) * 1e3;
+  return parseFloat(s);
+}
+
+function sortTableByIndex(index, th) {
+  const table = document.getElementById("leaderboard");
+  const tbody = table.tBodies[0];
+  const rows = Array.from(tbody.querySelectorAll("tr"));
+
+  // direzione
+  const currentDir = th.dataset.sortDir === "asc" ? "desc" : "asc";
+  th.dataset.sortDir = currentDir;
+
+  // reset indicatori
+  document.querySelectorAll(".sort-indicator").forEach(el => el.textContent = "");
+  th.querySelector(".sort-indicator").textContent = currentDir === "asc" ? "▲" : "▼";
+
+  rows.sort((a, b) => {
+    const A = a.cells[index].innerText.trim();
+    const B = b.cells[index].innerText.trim();
+
+    const dateA = parseDate(A);
+    const dateB = parseDate(B);
+    if (!isNaN(dateA) && !isNaN(dateB))
+      return currentDir === "asc" ? dateA - dateB : dateB - dateA;
+
+    const numA = parseNumber(A);
+    const numB = parseNumber(B);
+    if (!isNaN(numA) && !isNaN(numB))
+      return currentDir === "asc" ? numA - numB : numB - numA;
+
+    return currentDir === "asc" ? A.localeCompare(B) : B.localeCompare(A);
+  });
+
+  rows.forEach(r => tbody.appendChild(r));
+}
+
+// assegna automaticamente i listener alle colonne
+document.querySelectorAll("thead th[data-index]").forEach(th => {
+  const idx = parseInt(th.dataset.index);
+  th.addEventListener("click", () => sortTableByIndex(idx, th));
+});
+</script>
+
+</body>
+</html>
