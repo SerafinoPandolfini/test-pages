@@ -217,79 +217,85 @@
         </div>
       </div>
     </div>
-    <div class="table-container">
-      <table id="leaderboard-table" class="table is-fullwidth is-hoverable">
-        <thead>
-          <!-- Riga superiore: intestazioni raggruppate -->
-          <tr>
-            <th rowspan="2" data-index="0">Model Name <span class="sort-indicator"></span></th>
-            <th rowspan="2" data-index="1">Author / Team <span class="sort-indicator"></span></th>
-            <th rowspan="2" data-index="2">Submission Date <span class="sort-indicator"></span></th>
-            <th rowspan="2" data-index="3"># Parameters <span class="sort-indicator"></span></th>
-            <th colspan="3" class="section-group">AUROC</th>
-            <th rowspan="2" data-index="7">References<span class="sort-indicator"></span></th>
-          </tr>
-          <!-- Riga inferiore: metriche -->
-          <tr>
-            <th data-index="4">Past Period<span class="sort-indicator"></span></th>
-            <th data-index="5">Next Period<span class="sort-indicator"></span></th>
-            <th data-index="6">Whole Period<span class="sort-indicator"></span></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>ViT-L/14 DINOv2</td>
-            <td class="center">Meta</td>
-            <td class="center">Jul/2025</td>
-            <td class="right">304M</td>
-            <td class="right">NA</td>
-            <td class="right">94.2%</td>
-            <td class="right">NA</td>
-            <td>
-              <div class="icon-container">
-                <a href="https://arxiv.org/abs/2412.16334">
-                  <img src="paper.png" class="icon-link" alt="Paper">
-                </a>
-                <a href="https://github.com/facebookresearch/dinov2">
-                  <img src="github.png" class="icon-link" alt="Github">
-                </a>
-              </div>              
-            </td>
-          </tr>
-          <tr>
-            <td>ViT-L/14 CLIP</td>
-            <td class="center">LAION</td>
-            <td class="center">Jul/2025</td>
-            <td class="right">304M</td>
-            <td class="right">NA</td>
-            <td class="right">92.0%</td>
-            <td class="right">NA</td>
-            <td>
-              <div class="icon-container">
-                <a href="https://huggingface.co/laion/CLIP-ViT-L-14-CommonPool.XL-s13B-b90K">
-                  <img src="model.png" class="icon-link" alt="Model">
-                </a>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>ResNet-50 CLIP</td>
-            <td class="center">Open AI</td>
-            <td class="center">Jul/2025</td>
-            <td class="right">38M</td>
-            <td class="right">NA</td>
-            <td class="right">81.8%</td>
-            <td class="right">NA</td>
-            <td>
-              <div class="icon-container">
-                <a href="https://arxiv.org/abs/2103.00020">
-                  <img src="paper.png" class="icon-link" alt="Paper">
-                </a>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+  </div>
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="table-container">
+          <table id="leaderboard-table" class="table is-fullwidth is-hoverable">
+            <thead>
+              <!-- Riga superiore: intestazioni raggruppate -->
+              <tr>
+                <th rowspan="2" data-index="0">Model Name <span class="sort-indicator"></span></th>
+                <th rowspan="2" data-index="1">Author / Team <span class="sort-indicator"></span></th>
+                <th rowspan="2" data-index="2">Submission Date <span class="sort-indicator"></span></th>
+                <th rowspan="2" data-index="3"># Parameters <span class="sort-indicator"></span></th>
+                <th colspan="3" class="section-group">AUROC</th>
+                <th rowspan="2" data-index="7">References<span class="sort-indicator"></span></th>
+              </tr>
+              <!-- Riga inferiore: metriche -->
+              <tr>
+                <th data-index="4">Past Period<span class="sort-indicator"></span></th>
+                <th data-index="5">Next Period<span class="sort-indicator"></span></th>
+                <th data-index="6">Whole Period<span class="sort-indicator"></span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ViT-L/14 DINOv2</td>
+                <td class="center">Meta</td>
+                <td class="center">Jul/2025</td>
+                <td class="right">304M</td>
+                <td class="right">NA</td>
+                <td class="right">94.2%</td>
+                <td class="right">NA</td>
+                <td>
+                  <div class="icon-container">
+                    <a href="https://arxiv.org/abs/2412.16334">
+                      <img src="paper.png" class="icon-link" alt="Paper">
+                    </a>
+                    <a href="https://github.com/facebookresearch/dinov2">
+                      <img src="github.png" class="icon-link" alt="Github">
+                    </a>
+                  </div>              
+                </td>
+              </tr>
+              <tr>
+                <td>ViT-L/14 CLIP</td>
+                <td class="center">LAION</td>
+                <td class="center">Jul/2025</td>
+                <td class="right">304M</td>
+                <td class="right">NA</td>
+                <td class="right">92.0%</td>
+                <td class="right">NA</td>
+                <td>
+                  <div class="icon-container">
+                    <a href="https://huggingface.co/laion/CLIP-ViT-L-14-CommonPool.XL-s13B-b90K">
+                      <img src="model.png" class="icon-link" alt="Model">
+                    </a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>ResNet-50 CLIP</td>
+                <td class="center">Open AI</td>
+                <td class="center">Jul/2025</td>
+                <td class="right">38M</td>
+                <td class="right">NA</td>
+                <td class="right">81.8%</td>
+                <td class="right">NA</td>
+                <td>
+                  <div class="icon-container">
+                    <a href="https://arxiv.org/abs/2103.00020">
+                      <img src="paper.png" class="icon-link" alt="Paper">
+                    </a>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
 </section>
