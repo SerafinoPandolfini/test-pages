@@ -74,6 +74,21 @@
     vertical-align: middle;
     font-weight: 600;
     }
+
+    .icon-link {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+    margin: 0 8px;
+    fill: currentColor; 
+    }
+    .icon-container a {
+      color: #333;
+      text-decoration: none;
+    }
+    .icon-container a:hover {
+      color: #0077cc;
+    }
   </style>
 </head>
 
@@ -193,7 +208,19 @@
             <td>10/2025</td>
             <td>304M</td>
             <td>NA</td><td>92.0%</td><td>NA</td>
-            <td><a href="#">Model Page</a></td>
+            <td>
+              <div class="icon-container">
+              <a href="#">
+                <img src="paper.png" class="icon-link" alt="Paper">
+              </a>
+              <a href="#">
+                <img src="github.png" class="icon-link" alt="Github">
+              </a>
+              <a href="#">
+                <img src="model.png" class="icon-link" alt="Model">
+              </a>
+              </div>
+            </td>
           </tr>
           <tr>
             <td>ResNet-50 CLIP</td>
