@@ -156,11 +156,11 @@
     </div>
   </div>
 </section>
-<section class="section">
+<section class="section" id="leaderboard">
   <div class="container">
     <h2 class="title is-3 has-text-centered">Leaderboard</h2>
     <div class="table-container">
-      <table id="leaderboard" class="table is-fullwidth is-hoverable">
+      <table id="leaderboard-table" class="table is-fullwidth is-hoverable">
         <thead>
           <!-- Riga superiore: intestazioni raggruppate -->
           <tr>
@@ -247,7 +247,7 @@ function parseNumber(str) {
 }
 
 function sortTableByIndex(index, th) {
-  const table = document.getElementById("leaderboard");
+  const table = document.getElementById("leaderboard-table");
   const tbody = table.tBodies[0];
   const rows = Array.from(tbody.querySelectorAll("tr"));
 
