@@ -42,6 +42,14 @@
       border-bottom: 1px solid #e9eef6;
     }
 
+    td.center {
+      text-align: center !important;
+    }
+
+    td.right {
+      text-align: right !important;
+    }
+
     tr:nth-child(even) td {
       background-color: #fbfdff;
     }
@@ -175,18 +183,24 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Content</h2>
+        <h2 class="title is-3">Framework</h2>
         <div class="content has-text-justified">
           <p>
-            TODO
+            Unlike traditional approaches that evaluate models on static datasets, AI-GenBench introduces a temporal evaluation framework for AI-generated image detection. In this setting, detection models are incrementally trained on synthetic images ordered by the historical release of their generative models. This setup tests how well detectors can generalize to new generation techniques, such as the transition from GANs to diffusion models.
+            <br>
+            The goal of AI-GenBench is to provide a benchmark protocol for assessing the robustness of detection models across both past and future image generation methods. It includes training and evaluation datasets covering a wide range of image generators released between 2017 and 2024, spanning from early GANs to the latest diffusion-based models.
+            The benchmark also offers a PyTorch Lightning–based framework for training and evaluating detection models.
           </p>
         </div>
+        <figure class="image" style="display:inline-block; width:100%;">
+                <img src="generator.png" alt="Gereators inclueded in the framework">
+              </figure>
       </div>
     </div>
   </div>
 </section>
 <section class="section" id="leaderboard">
-  <div class="container">
+  <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
       <h2 class="title is-3 has-text-centered">Leaderboard</h2>
@@ -225,10 +239,12 @@
         <tbody>
           <tr>
             <td>ViT-L/14 DINOv2</td>
-            <td>Meta</td>
-            <td>10/2025</td>
-            <td>304M</td>
-            <td>NA</td><td>94.2%</td><td>NA</td>
+            <td class="center">Meta</td>
+            <td class="center">Jul/2025</td>
+            <td class="right">304M</td>
+            <td class="right">NA</td>
+            <td class="right">94.2%</td>
+            <td class="right">NA</td>
             <td>
               <div class="icon-container">
                 <a href="https://arxiv.org/abs/2412.16334">
@@ -242,10 +258,12 @@
           </tr>
           <tr>
             <td>ViT-L/14 CLIP</td>
-            <td>LAION</td>
-            <td>10/2025</td>
-            <td>304M</td>
-            <td>NA</td><td>92.0%</td><td>NA</td>
+            <td class="center">LAION</td>
+            <td class="center">Jul/2025</td>
+            <td class="right">304M</td>
+            <td class="right">NA</td>
+            <td class="right">92.0%</td>
+            <td class="right">NA</td>
             <td>
               <div class="icon-container">
                 <a href="https://huggingface.co/laion/CLIP-ViT-L-14-CommonPool.XL-s13B-b90K">
@@ -256,10 +274,12 @@
           </tr>
           <tr>
             <td>ResNet-50 CLIP</td>
-            <td>Open AI</td>
-            <td>10/2025</td>
-            <td>38M</td>
-            <td>NA</td><td>81.8%</td><td>NA</td>
+            <td class="center">Open AI</td>
+            <td class="center">Jul/2025</td>
+            <td class="right">38M</td>
+            <td class="right">NA</td>
+            <td class="right">81.8%</td>
+            <td class="right">NA</td>
             <td>
               <div class="icon-container">
                 <a href="https://arxiv.org/abs/2103.00020">
