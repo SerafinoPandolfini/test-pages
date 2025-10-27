@@ -97,6 +97,16 @@
     .icon-container a:hover {
       color: #0077cc;
     }
+
+    .responsive-figure {
+      display: inline-block;
+      width: 80%;
+    }
+    @media (max-width: 768px) {
+      .responsive-figure {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 
@@ -144,7 +154,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column has-text-centered">
-        <figure class="image is-4by2" style="display:inline-block; width:80%;">
+        <figure class="image is-4by2 responsive-figure"">
           <img src="ai_gen_bench_teaser.jpg" alt="Immagine illustrativa">
         </figure>
       </div>
